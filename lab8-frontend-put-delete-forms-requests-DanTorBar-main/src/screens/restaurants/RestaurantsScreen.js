@@ -19,12 +19,8 @@ export default function RestaurantsScreen ({ navigation, route }) {
   const [restaurantToBeDeleted, setRestaurantToBeDeleted] = useState(null)
 
   useEffect(() => {
-    if (loggedInUser) {
-      fetchRestaurants()
-    } else {
-      setRestaurants(null)
-    }
-  }, [loggedInUser, route])
+    fetchRestaurants()
+  }, [route])
 
   const renderRestaurant = ({ item }) => {
     return (
@@ -57,6 +53,41 @@ onPress={() => navigation.navigate('EditRestaurantScreen', { id: item.id })}
       Edit
     </TextRegular>
   </View>
+  <Pressable
+onPress={() => navigation.navigate('EditRestaurantScreen', { id: item.id })}
+  style={({ pressed }) => [
+    {
+      backgroundColor: pressed
+        ? GlobalStyles.brandBlueTap
+        : GlobalStyles.brandBlue
+    },
+    styles.actionButton
+  ]}>
+  <View style={[{ flex: 1, flexDirection: 'row', justifyContent: 'center' }]}>
+    <MaterialCommunityIcons name='pencil' color={'white'} size={20}/>
+    <TextRegular textStyle={styles.text}>
+      Edit
+    </TextRegular>
+  </View>
+</Pressable>
+
+<Pressable
+  onPress={() => { setRestaurantToBeDeleted(item) }}
+  style={({ pressed }) => [
+    {
+      backgroundColor: pressed
+        ? GlobalStyles.brandPrimaryTap
+        : GlobalStyles.brandPrimary
+    },
+    styles.actionButton
+  ]}>
+  <View style={[{ flex: 1, flexDirection: 'row', justifyContent: 'center' }]}>
+    <MaterialCommunityIcons name='delete' color={'white'} size={20}/>
+    <TextRegular textStyle={styles.text}>
+      Delete
+    </TextRegular>
+  </View>
+</Pressable>
 </Pressable>
 
 <Pressable
