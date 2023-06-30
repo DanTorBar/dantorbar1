@@ -18,3 +18,5 @@ https://github.com/IISSI2-IS-2022-2023/DeliverUS-Owner-Monorepo-SimulacroEvaluac
 https://github.com/IISSI2-IS-profs/laboratory-exam-backend-solutions
 
 https://github.com/IISSI2-IS-profs/laboratory-exam-frontend-solutions/tree/main
+
+https://github.com/DanTorBar/DanTorBar-DeliverUS-Owner-Monorepo-Examen-Mayo
